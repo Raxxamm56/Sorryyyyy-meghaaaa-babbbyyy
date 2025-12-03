@@ -2,83 +2,98 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>I’m sorry, Megha ❤️</title>
+<title>Megha ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        background: linear-gradient(135deg, #ffd1e8, #ffe5f4);
-        text-align: center;
-        overflow-x: hidden;
-        font-family: 'Poppins', sans-serif;
-    }
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
 
-    h1 {
-        font-family: 'Great Vibes', cursive;
-        font-size: 3.5em;
-        margin-top: 40px;
-        color: #ff0a7a;
-        animation: fadeIn 2s ease-in;
-    }
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+    margin-top: 35px;
+    color: #ff6fdf;
+    text-shadow: 0 0 25px rgba(255, 105, 230, .7);
+    animation: fadeDown 2s ease-in-out;
+}
 
-    p {
-        width: 80%;
-        margin: auto;
-        font-size: 1.3em;
-        line-height: 1.7;
-        color: #333;
-        animation: fadeIn 3s ease-in;
-    }
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 
-    @keyframes fadeIn {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
+#message {
+    font-size: 1.4em;
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeIn 2s 1.5s forwards;
+}
 
-    .gallery {
-        margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
-    .gallery img {
-        width: 260px;
-        margin: 10px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(255,0,100,0.3);
+.gallery {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 270px;
+    margin: 10px;
+    border-radius: 14px;
+    opacity: 0;
+    transform: scale(.8);
+    animation: popIn .7s forwards;
+    box-shadow: 0 0 20px rgba(255, 110, 200, 0.35);
+}
+
+.gallery img:nth-child(1) { animation-delay: .3s; }
+.gallery img:nth-child(2) { animation-delay: .6s; }
+.gallery img:nth-child(3) { animation-delay: .9s; }
+.gallery img:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes popIn {
+    to {
+        opacity: 1;
         transform: scale(1);
-        transition: .3s;
     }
+}
 
-    .gallery img:hover {
-        transform: scale(1.07);
-        box-shadow: 0 6px 20px rgba(255,0,100,0.45);
-    }
+.heart {
+    position: fixed;
+    color: #ff5abf;
+    font-size: 20px;
+    bottom: -10%;
+    animation: floatUp 7s linear infinite;
+    opacity: .7;
+}
 
-    .heart {
-        position: fixed;
-        color: #ff2e76;
-        font-size: 22px;
-        animation: floatUp 7s linear infinite;
-        bottom: -10%;
-        opacity: 0.7;
-    }
-
-    @keyframes floatUp {
-        from { transform: translateY(0); }
-        to { transform: translateY(-120vh); opacity: 0;}
-    }
-
+@keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
 </style>
 </head>
 
 <body>
 
 <audio autoplay loop>
-    <source src="Perfect - 320Kbps-(Mr-Jat.in).mp3" type="audio/mpeg">
+  <source src="Perfect - 320Kbps-(Mr-Jat.in).mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -87,20 +102,31 @@ function createHeart() {
     heart.className = "heart";
     heart.innerText = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = 18 + Math.random() * 20 + "px";
     heart.style.animationDuration = 4 + Math.random() * 4 + "s";
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 8000);
 }
-setInterval(createHeart, 500);
+setInterval(createHeart, 450);
 </script>
 
-<h1>Dear Megha ❤️</h1>
+<h1>Megha, I’m sorry ❤️</h1>
 
-<p>
-I am truly sorry. I never meant to hurt you, and I regret my actions deeply.  
-You matter to me more than I can express, and I want nothing more than to make things right.  
-I love you — more than words can show.  
-</p>
+<p id="message"></p>
+
+<script>
+let text = "I know I hurt you, and I feel genuinely sorry... you mean so much to me, more than I can express — and I never want to lose you ❤️";
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 45);
+    }
+}
+setTimeout(type, 1200);
+</script>
 
 <div class="gallery">
     <img src="FullSizeRender-32.jpg">
@@ -108,42 +134,6 @@ I love you — more than words can show.
     <img src="IMG_20250613_160726.jpg">
     <img src="IMG_2518.JPG">
 </div>
-
-</body>
-</html>        border-radius: 15px;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
-    }
-    audio {
-        margin-top: 30px;
-    }
-</style>
-</head>
-<body>
-
-<h1>Dear Megha ❤️</h1>
-
-<p>
-I am so incredibly sorry. I know my actions hurt you, and seeing you upset is the last thing I want.<br><br>
-You mean everything to me, and losing your smile breaks my heart.<br><br>
-I promise to learn, grow, and love you better.<br><br>
-Please forgive me, baby.<br><br>
-<span style="color:#ff2e76; font-size:1.4em;">❤️ I love you ❤️</span>
-</p>
-
-<div class="gallery">
-    <img src="38fb727d8c1346920c345d7af3b00.jpg">
-    <img src="591b55858195bb9ac92f6ab90675.jpg">
-    <img src="FullSizeRender-32.jpg">
-    <img src="IMG-20250322-WA0073.jpg">
-    <img src="IMG_20250613_160726.jpg">
-    <img src="IMG_2518.JPG">
-    <img src="Snapchat-1900694693.jpg">
-    <img src="VideoCapture_20241223-185916.jpg">
-</div>
-
-<audio autoplay loop>
-  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Ed_Sheeran/Perfect.mp3" type="audio/mpeg">
-</audio>
 
 </body>
 </html>
