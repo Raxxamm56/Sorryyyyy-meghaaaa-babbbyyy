@@ -2,95 +2,72 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>I'm Sorry, Megha</title>
+<title>I’m Sorry, Megha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Trebuchet MS', sans-serif;
         background: #ffe6f2;
         color: #333;
         text-align: center;
         margin: 0;
-        overflow-x: hidden;
+        padding: 0 0 40px 0;
     }
     h1 {
-        font-size: 3em;
-        color: #ff4d94;
-        margin-top: 40px;
+        font-size: 2.5em;
+        color: #ff2e76;
+        margin-top: 35px;
     }
     p {
-        font-size: 1.3em;
-        width: 80%;
+        font-size: 1.25em;
+        width: 85%;
         margin: auto;
         line-height: 1.6;
     }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 25px;
+    }
     .gallery img {
         width: 260px;
+        max-width: 90%;
         margin: 10px;
-        border-radius: 18px;
-        box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
     }
-    .heart {
-        position: fixed;
-        color: red;
-        animation: floatUp 6s linear infinite;
-        bottom: -50px;
-        font-size: 20px;
-    }
-    @keyframes floatUp {
-        0% {transform: translateY(0); opacity:1;}
-        100% {transform: translateY(-800px); opacity:0;}
+    audio {
+        margin-top: 30px;
     }
 </style>
 </head>
-
 <body>
 
 <h1>Dear Megha ❤️</h1>
 
 <p>
-I am so incredibly sorry. I know my actions hurt you, and seeing you upset is the last thing I ever want.<br><br>
-There's no excuse for what I said, and I deeply regret it. I've been thinking about it, and I understand why you feel disappointed.<br><br>
-You mean the world to me, and our relationship is what I value most. I promise to learn from this and do better in the future. Please know that I never intended to cause you pain.<br><br>
-I hope you can find it in your heart to forgive me.<br><br>
-<span style="color:#ff4d94; font-size:1.4em;">❤️ I love you ❤️</span>
+I am so incredibly sorry. I know my actions hurt you, and seeing you upset is the last thing I want.<br><br>
+You mean everything to me, and losing your smile breaks my heart.<br><br>
+I promise to learn, grow, and love you better.<br><br>
+Please forgive me, baby.<br><br>
+<span style="color:#ff2e76; font-size:1.4em;">❤️ I love you ❤️</span>
 </p>
 
-<br><br>
-
 <div class="gallery">
-    <img src="3CA533C3-98E4-4B5E-AA66-97695E14530A.jpeg">
-    <img src="007697B8-4E1B-489E-8410-BCDAB9FCFC37.jpeg">
-    <img src="10B10F7C-42FD-4568-9BAE-303D6E8EAD44.jpeg">
-    <img src="D129F1DD-38CA-41B1-8D8A-5DB1C82AC571.jpeg">
-    <img src="B3D2A40D-D7CD-4215-95A3-5B1F8E420162.jpeg">
-    <img src="D45DDEAE-BF00-4447-983A-01DEDFC6FA03.jpeg">
-    <img src="D76CDFE9-F6E0-4742-9081-837A9D223900.jpeg">
-    <img src="F2B622EF-1F5F-4B33-9743-9A4D4BA994D5.jpeg">
+    <img src="38fb727d8c1346920c345d7af3b00.jpg">
+    <img src="591b55858195bb9ac92f6ab90675.jpg">
+    <img src="FullSizeRender-32.jpg">
+    <img src="IMG-20250322-WA0073.jpg">
+    <img src="IMG_20250613_160726.jpg">
+    <img src="IMG_2518.JPG">
+    <img src="Snapchat-1900694693.jpg">
+    <img src="VideoCapture_20241223-185916.jpg">
 </div>
 
-<br><br>
-
-<!-- Music -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/5gg17XXXiNo?autoplay=1&loop=1&playlist=5gg17XXXiNo">
-</iframe>
-
-<script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerText = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random()*20 + 10) + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
-}
-
-setInterval(createHeart, 400);
-</script>
+<audio autoplay loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Ed_Sheeran/Perfect.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>
