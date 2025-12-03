@@ -2,39 +2,115 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>I’m Sorry, Megha ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I’m sorry, Megha ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
     body {
-        font-family: 'Trebuchet MS', sans-serif;
-        background: #ffe6f2;
-        color: #333;
-        text-align: center;
         margin: 0;
-        padding: 0 0 40px 0;
+        background: linear-gradient(135deg, #ffd1e8, #ffe5f4);
+        text-align: center;
+        overflow-x: hidden;
+        font-family: 'Poppins', sans-serif;
     }
+
     h1 {
-        font-size: 2.5em;
-        color: #ff2e76;
-        margin-top: 35px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5em;
+        margin-top: 40px;
+        color: #ff0a7a;
+        animation: fadeIn 2s ease-in;
     }
+
     p {
-        font-size: 1.25em;
-        width: 85%;
+        width: 80%;
         margin: auto;
-        line-height: 1.6;
+        font-size: 1.3em;
+        line-height: 1.7;
+        color: #333;
+        animation: fadeIn 3s ease-in;
     }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
     .gallery {
+        margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 25px;
     }
+
     .gallery img {
         width: 260px;
-        max-width: 90%;
         margin: 10px;
         border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(255,0,100,0.3);
+        transform: scale(1);
+        transition: .3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.07);
+        box-shadow: 0 6px 20px rgba(255,0,100,0.45);
+    }
+
+    .heart {
+        position: fixed;
+        color: #ff2e76;
+        font-size: 22px;
+        animation: floatUp 7s linear infinite;
+        bottom: -10%;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        from { transform: translateY(0); }
+        to { transform: translateY(-120vh); opacity: 0;}
+    }
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="Perfect - 320Kbps-(Mr-Jat.in).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 500);
+</script>
+
+<h1>Dear Megha ❤️</h1>
+
+<p>
+I am truly sorry. I never meant to hurt you, and I regret my actions deeply.  
+You matter to me more than I can express, and I want nothing more than to make things right.  
+I love you — more than words can show.  
+</p>
+
+<div class="gallery">
+    <img src="FullSizeRender-32.jpg">
+    <img src="IMG-20250322-WA0073.jpg">
+    <img src="IMG_20250613_160726.jpg">
+    <img src="IMG_2518.JPG">
+</div>
+
+</body>
+</html>        border-radius: 15px;
         box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
     }
     audio {
