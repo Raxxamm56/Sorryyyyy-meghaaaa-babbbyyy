@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I'm Sorry, Megha</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #ffe6f2;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 3em;
+        color: #ff4d94;
+        margin-top: 40px;
+    }
+    p {
+        font-size: 1.3em;
+        width: 80%;
+        margin: auto;
+        line-height: 1.6;
+    }
+    .gallery img {
+        width: 260px;
+        margin: 10px;
+        border-radius: 18px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+    .heart {
+        position: fixed;
+        color: red;
+        animation: floatUp 6s linear infinite;
+        bottom: -50px;
+        font-size: 20px;
+    }
+    @keyframes floatUp {
+        0% {transform: translateY(0); opacity:1;}
+        100% {transform: translateY(-800px); opacity:0;}
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Dear Megha ❤️</h1>
+
+<p>
+I am so incredibly sorry. I know my actions hurt you, and seeing you upset is the last thing I ever want.<br><br>
+There's no excuse for what I said, and I deeply regret it. I've been thinking about it, and I understand why you feel disappointed.<br><br>
+You mean the world to me, and our relationship is what I value most. I promise to learn from this and do better in the future. Please know that I never intended to cause you pain.<br><br>
+I hope you can find it in your heart to forgive me.<br><br>
+<span style="color:#ff4d94; font-size:1.4em;">❤️ I love you ❤️</span>
+</p>
+
+<br><br>
+
+<div class="gallery">
+    <img src="/mnt/data/3CA533C3-98E4-4B5E-AA66-97695E14530A.jpeg">
+    <img src="/mnt/data/007697B8-4E1B-489E-8410-BCDAB9FCFC37.jpeg">
+    <img src="/mnt/data/10B10F7C-42FD-4568-9BAE-303D6E8EAD44.jpeg">
+    <img src="/mnt/data/D129F1DD-38CA-41B1-8D8A-5DB1C82AC571.jpeg">
+    <img src="/mnt/data/B3D2A40D-D7CD-4215-95A3-5B1F8E420162.jpeg">
+    <img src="/mnt/data/D45DDEAE-BF00-4447-983A-01DEDFC6FA03.jpeg">
+    <img src="/mnt/data/D76CDFE9-F6E0-4742-9081-837A9D223900.jpeg">
+    <img src="/mnt/data/F2B622EF-1F5F-4B33-9743-9A4D4BA994D5.jpeg">
+</div>
+
+<br><br>
+
+<!-- Music -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/5gg17XXXiNo?autoplay=1&loop=1&playlist=5gg17XXXiNo">
+</iframe>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random()*20 + 10) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
