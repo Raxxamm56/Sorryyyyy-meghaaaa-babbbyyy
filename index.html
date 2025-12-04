@@ -33,12 +33,12 @@ h1 {
     line-height: 1.6;
 }
 
-/* SLIDESHOW */
+/* SLIDESHOW - 9:16 ratio */
 .slideshow {
-    margin: 35px auto; /* horizontally center */
-    width: 85vw;
-    max-width: 320px;
-    aspect-ratio: 4/3; /* maintains height proportionally */
+    margin: 35px auto;
+    width: 45vw;       /* adjust width for portrait */
+    max-width: 250px;
+    aspect-ratio: 9/16; /* 9:16 portrait ratio */
     border-radius: 18px;
     overflow: hidden;
     border: 2px solid rgba(255, 120, 200, .8);
@@ -88,16 +88,55 @@ h1 {
     from { transform: translateY(0); }
     to { transform: translateY(-130vh); opacity: 0; }
 }
+
+/* Music Play Button */
+#playButton {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #ff2e8b;
+    color: white;
+    cursor: pointer;
+}
 </style>
 </head>
-
 <body>
 
-<audio autoplay loop>
+<h1>Megha ❤️</h1>
+
+<!-- Music Button -->
+<audio id="mysong" loop>
   <source src="Perfect - 320Kbps-(Mr-Jat.in).mp3" type="audio/mpeg">
 </audio>
+<button id="playButton" onclick="document.getElementById('mysong').play()">Play Song 🎵</button>
+
+<!-- Typewriter Message -->
+<p id="message"></p>
 
 <script>
+// Typewriter text
+let text = `
+My dearest Megha…  
+
+I know I’ve hurt you, and I am truly, deeply sorry. You are the person I care about most in this world, and I hate that my words or actions caused you pain. You deserve love, softness, patience, and respect and I promise to give you that.  
+Thank you for being someone who brings warmth, beauty, and meaning into my life.  
+I will do better. I will love you better. I will communicate better. I will treat you the way you truly deserve. I don’t want to lose you, Megha. I loveeeeee youuuuuuuu❤️more than these words can express.  
+
+Yours, always. ❤️`;
+
+let index = 0;
+function type() {
+    if (index < text.length) {
+        document.getElementById("message").innerText += text.charAt(index);
+        index++;
+        setTimeout(type, 38);
+    }
+}
+setTimeout(type, 600);
+
+// Floating emojis
 function floatEmoji(symbol) {
     const elem = document.createElement("div");
     elem.className = "float-item";
@@ -114,33 +153,7 @@ setInterval(() => floatEmoji("🦋"), 1100);
 setInterval(() => floatEmoji("✨"), 700);
 </script>
 
-<h1>Megha ❤️</h1>
-
-<p id="message"></p>
-
-<script>
-let text = `
-My dearest Megha…  
-
-I know I’ve hurt you, and I am truly, deeply sorry. You are the person I care about most in this world, and I hate that my words or actions caused you pain. You deserve love, softness, patience, and respect and I promise to give you that.  
-Thank you for being someone who brings warmth, beauty, and meaning into my life.  
-I will do better. I will love you better. I will communicate better. I will treat you the way you truly deserve. I don’t want to lose you, Megha. I loveeeeee youuuuuuuu❤️more than these words can express.  
-
-Yours, always. ❤️`;
-
-let index = 0;
-
-function type() {
-    if (index < text.length) {
-        document.getElementById("message").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(type, 38);
-    }
-}
-setTimeout(type, 600);
-</script>
-
-<!-- CENTERED SLIDESHOW -->
+<!-- Centered Slideshow -->
 <div class="slideshow">
     <img src="FullSizeRender-32.jpg" alt="Slide 1">
     <img src="IMG-20250322-WA0073.jpg" alt="Slide 2">
@@ -152,4 +165,4 @@ setTimeout(type, 600);
 </div>
 
 </body>
-</html>
+    </html>
