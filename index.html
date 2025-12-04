@@ -31,14 +31,15 @@ h1 {
     margin: auto;
     margin-top: 10px;
     line-height: 1.6;
+    text-align: left; /* Optional: looks nicer for paragraphs */
 }
 
 /* SLIDESHOW - 9:16 ratio */
 .slideshow {
     margin: 35px auto;
-    width: 45vw;       /* adjust width for portrait */
+    width: 45vw;       
     max-width: 250px;
-    aspect-ratio: 9/16; /* 9:16 portrait ratio */
+    aspect-ratio: 9/16; /* portrait ratio */
     border-radius: 18px;
     overflow: hidden;
     border: 2px solid rgba(255, 120, 200, .8);
@@ -116,24 +117,31 @@ h1 {
 <p id="message"></p>
 
 <script>
-// Typewriter text
-let text = `
-My dearest Megha…  
+// Typewriter text with proper line breaks
+let text = `My dearest Megha…
 
-I know I’ve hurt you, and I am truly, deeply sorry. You are the person I care about most in this world, and I hate that my words or actions caused you pain. You deserve love, softness, patience, and respect and I promise to give you that.  
-Thank you for being someone who brings warmth, beauty, and meaning into my life.  
-I will do better. I will love you better. I will communicate better. I will treat you the way you truly deserve. I don’t want to lose you, Megha. I loveeeeee youuuuuuuu❤️more than these words can express.  
+I know I’ve hurt you, and I am truly, deeply sorry. You are the person I care about most in this world, and I hate that my words or actions caused you pain. You deserve love, softness, patience, and respect and I promise to give you that.
+Thank you for being someone who brings warmth, beauty, and meaning into my life.
+I will do better. I will love you better. I will communicate better. I will treat you the way you truly deserve. I don’t want to lose you, Megha. I loveeeeee youuuuuuuu❤️ more than these words can express.
 
 Yours, always. ❤️`;
 
 let index = 0;
+
 function type() {
     if (index < text.length) {
-        document.getElementById("message").innerText += text.charAt(index);
+        let char = text.charAt(index);
+        // Convert newlines to <br> for proper HTML display
+        if (char === '\n') {
+            document.getElementById("message").innerHTML += '<br>';
+        } else {
+            document.getElementById("message").innerHTML += char;
+        }
         index++;
         setTimeout(type, 38);
     }
 }
+
 setTimeout(type, 600);
 
 // Floating emojis
@@ -165,4 +173,4 @@ setInterval(() => floatEmoji("✨"), 700);
 </div>
 
 </body>
-    </html>
+</html>
