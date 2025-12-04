@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Megha ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -9,8 +10,8 @@
 <style>
 body {
     margin: 0;
-    background: radial-gradient(circle at top, #2e003e, #000);
-    color: white;
+    background: linear-gradient(135deg, #ffebf4, #ffcde6);
+    color: #5a0048;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
@@ -18,95 +19,77 @@ body {
 
 h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 4.2em;
-    margin-top: 35px;
-    color: #ff6fdf;
-    text-shadow: 0 0 25px rgba(255, 105, 230, .7);
-    animation: fadeDown 2s ease-in-out;
-}
-
-@keyframes fadeDown {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
+    font-size: 3.5em;
+    margin-top: 25px;
+    color: #ff2e8b;
+    text-shadow: 0 0 15px rgba(255, 105, 230, .7);
 }
 
 #message {
-    font-size: 1.4em;
-    width: 80%;
+    font-size: 1.2em;
+    width: 90%;
     margin: auto;
-    margin-top: 15px;
-    line-height: 1.7;
-    opacity: 0;
-    animation: fadeIn 2s 1.5s forwards;
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
+/* SLIDESHOW */
 .slideshow {
-    margin-top: 40px;
-    width: 300px;
-    height: 380px;
+    margin-top: 35px;
+    width: 85vw;
+    max-width: 320px;
+    height: 78vw;
+    max-height: 380px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(255, 130, 210, .5);
-    border: 2px solid rgba(255, 170, 240, .8);
-    animation: glow 3s ease-in-out infinite;
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 15px #ff7bd9; }
-    50% { box-shadow: 0 0 35px #ff2ebd; }
-    100% { box-shadow: 0 0 15px #ff7bd9; }
+    border: 2px solid rgba(255, 120, 200, .8);
+    background: #ffe5f4;
+    box-shadow: 0 0 25px rgba(255, 130, 210, .6);
+    position: relative;
 }
 
 .slideshow img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: center;
+    position: absolute;
     opacity: 0;
-    animation: fadeSlide 28s infinite;
+    animation: fadeSlide 14s infinite;
 }
 
-.slideshow img:nth-child(1) { animation-delay: 0s; }
-.slideshow img:nth-child(2) { animation-delay: 4s; }
-.slideshow img:nth-child(3) { animation-delay: 8s; }
-.slideshow img:nth-child(4) { animation-delay: 12s; }
-.slideshow img:nth-child(5) { animation-delay: 16s; }
-.slideshow img:nth-child(6) { animation-delay: 20s; }
-.slideshow img:nth-child(7) { animation-delay: 24s; }
+/* FAST SLIDESHOW: change every 2 seconds */
+.slideshow img:nth-child(1) {animation-delay: 0s;}
+.slideshow img:nth-child(2) {animation-delay: 2s;}
+.slideshow img:nth-child(3) {animation-delay: 4s;}
+.slideshow img:nth-child(4) {animation-delay: 6s;}
+.slideshow img:nth-child(5) {animation-delay: 8s;}
+.slideshow img:nth-child(6) {animation-delay: 10s;}
+.slideshow img:nth-child(7) {animation-delay: 12s;}
 
 @keyframes fadeSlide {
     0% {opacity: 0;}
-    8% {opacity: 1;}
-    22% {opacity: 1;}
+    10% {opacity: 1;}
+    20% {opacity: 1;}
     30% {opacity: 0;}
     100% {opacity: 0;}
 }
 
+/* FLOATING EMOJIS */
 .float-item {
     position: fixed;
-    bottom: -10%;
-    opacity: .8;
-    animation: floatUp 10s linear infinite;
+    bottom: -5%;
+    opacity: .9;
+    animation: floatUp 7s linear infinite;
     pointer-events: none;
+    font-size: 22px;
 }
 
 @keyframes floatUp {
     from { transform: translateY(0); }
     to { transform: translateY(-130vh); opacity: 0; }
 }
-
-.ballon { font-size: 28px; }
-.heart { font-size: 22px; }
-.butterfly { font-size: 24px; }
-.sparkle { font-size: 18px; }
-
 </style>
 </head>
 
@@ -117,38 +100,38 @@ h1 {
 </audio>
 
 <script>
-function floatEmoji(symbol, className, speed) {
+function floatEmoji(symbol) {
     const elem = document.createElement("div");
-    elem.className = "float-item " + className;
+    elem.className = "float-item";
     elem.innerText = symbol;
     elem.style.left = Math.random() * 100 + "vw";
-    elem.style.animationDuration = speed + Math.random() * 5 + "s";
+    elem.style.animationDuration = (5 + Math.random() * 4) + "s";
     document.body.appendChild(elem);
-    setTimeout(() => elem.remove(), 12000);
+    setTimeout(() => elem.remove(), 8000);
 }
 
-setInterval(() => floatEmoji("❤️","heart",6), 600);
-setInterval(() => floatEmoji("🎈","ballon",7), 900);
-setInterval(() => floatEmoji("🦋","butterfly",5), 1300);
-setInterval(() => floatEmoji("✨","sparkle",4), 700);
+setInterval(() => floatEmoji("❤️"), 600);
+setInterval(() => floatEmoji("🎈"), 900);
+setInterval(() => floatEmoji("🦋"), 1100);
+setInterval(() => floatEmoji("✨"), 700);
 </script>
 
-<h1>Megha, I’m sorry ❤️</h1>
+<h1>Megha ❤️</h1>
 
 <p id="message"></p>
 
 <script>
-let text = "I know I hurt you… and I'm truly sorry. You matter to me — deeply — and I will spend every day trying to do better and be better for you ❤️";
+let text = "I’m really sorry, and I truly mean it. You are the most precious person in my life, and I want to make things right. I love you ❤️";
 let index = 0;
 
 function type() {
     if (index < text.length) {
         document.getElementById("message").innerHTML += text.charAt(index);
         index++;
-        setTimeout(type, 45);
+        setTimeout(type, 38);
     }
 }
-setTimeout(type, 1200);
+setTimeout(type, 600);
 </script>
 
 <div class="slideshow">
