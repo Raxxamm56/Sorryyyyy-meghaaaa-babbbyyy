@@ -35,13 +35,10 @@ h1 {
 
 /* SLIDESHOW */
 .slideshow {
-    margin-top: 35px;
+    margin: 35px auto; /* horizontally center */
     width: 85vw;
     max-width: 320px;
-    height: 78vw;
-    max-height: 380px;
-    margin-left: auto;
-    margin-right: auto;
+    aspect-ratio: 4/3; /* maintains height proportionally */
     border-radius: 18px;
     overflow: hidden;
     border: 2px solid rgba(255, 120, 200, .8);
@@ -55,25 +52,26 @@ h1 {
     height: 100%;
     object-fit: cover;
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     animation: fadeSlide 14s infinite;
 }
 
-/* FAST SLIDESHOW: change every 2 seconds */
-.slideshow img:nth-child(1) {animation-delay: 0s;}
-.slideshow img:nth-child(2) {animation-delay: 2s;}
-.slideshow img:nth-child(3) {animation-delay: 4s;}
-.slideshow img:nth-child(4) {animation-delay: 6s;}
-.slideshow img:nth-child(5) {animation-delay: 8s;}
-.slideshow img:nth-child(6) {animation-delay: 10s;}
-.slideshow img:nth-child(7) {animation-delay: 12s;}
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 2s; }
+.slideshow img:nth-child(3) { animation-delay: 4s; }
+.slideshow img:nth-child(4) { animation-delay: 6s; }
+.slideshow img:nth-child(5) { animation-delay: 8s; }
+.slideshow img:nth-child(6) { animation-delay: 10s; }
+.slideshow img:nth-child(7) { animation-delay: 12s; }
 
 @keyframes fadeSlide {
-    0% {opacity: 0;}
-    10% {opacity: 1;}
-    20% {opacity: 1;}
-    30% {opacity: 0;}
-    100% {opacity: 0;}
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 /* FLOATING EMOJIS */
@@ -121,14 +119,15 @@ setInterval(() => floatEmoji("✨"), 700);
 <p id="message"></p>
 
 <script>
-let text = "
+let text = `
 My dearest Megha…  
 
 I know I’ve hurt you, and I am truly, deeply sorry. You are the person I care about most in this world, and I hate that my words or actions caused you pain. You deserve love, softness, patience, and respect and I promise to give you that.  
 Thank you for being someone who brings warmth, beauty, and meaning into my life.  
 I will do better. I will love you better. I will communicate better. I will treat you the way you truly deserve. I don’t want to lose you, Megha. I loveeeeee youuuuuuuu❤️more than these words can express.  
 
-Yours, always. ❤️";
+Yours, always. ❤️`;
+
 let index = 0;
 
 function type() {
@@ -141,14 +140,15 @@ function type() {
 setTimeout(type, 600);
 </script>
 
+<!-- CENTERED SLIDESHOW -->
 <div class="slideshow">
-    <img src="FullSizeRender-32.jpg">
-    <img src="IMG-20250322-WA0073.jpg">
-    <img src="IMG_20250613_160726.jpg">
-    <img src="IMG_2518.JPG">
-    <img src="591b55858195bb9ac92f6afb90675.jpg">
-    <img src="B3D2A40D-D7CD-4215-95A3-5B1F8E420162.jpeg">
-    <img src="D76CDFE9-F6E0-4742-9081-837A9D223900.jpeg">
+    <img src="FullSizeRender-32.jpg" alt="Slide 1">
+    <img src="IMG-20250322-WA0073.jpg" alt="Slide 2">
+    <img src="IMG_20250613_160726.jpg" alt="Slide 3">
+    <img src="IMG_2518.JPG" alt="Slide 4">
+    <img src="591b55858195bb9ac92f6afb90675.jpg" alt="Slide 5">
+    <img src="B3D2A40D-D7CD-4215-95A3-5B1F8E420162.jpeg" alt="Slide 6">
+    <img src="D76CDFE9-F6E0-4742-9081-837A9D223900.jpeg" alt="Slide 7">
 </div>
 
 </body>
